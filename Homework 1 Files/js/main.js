@@ -1,7 +1,7 @@
 /*
-     Name:
-     Date:
-     Class & Section:  WIA-####
+     Name:Janay Peters
+     Date:03/01/2016
+     Class & Section:  WIA333-O
      Comments: "HTML5 Canvas Drawing"
  */
 
