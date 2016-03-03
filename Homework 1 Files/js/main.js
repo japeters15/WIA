@@ -35,17 +35,9 @@ window.onload = function(){
 			
           
 
-/*******************************************
+/*
 PART 2- Circle
-
-Draw a circle starting at point (50 ,50)
-That has a radius of 20 px 
-Set the color of the circle to a shade of red and set the alpha to .5
-Set the stroke color to black and use a radius of 30px for this circle.
-
-Reminder - set the style first then draw.
-Use the arc method
-********************************************/
+*/
 
  var theCanvas2 = document.getElementById("Canvas2");
 				//theCanvas.width = 150;
@@ -75,16 +67,9 @@ Use the arc method
                 }
 
 
-/*******************************************
+/*
 PART 3- Star
-
-Practice using Path drawing.
-Create a 5-point star shaped pattern using the lineTo method.
-Begin this shape at (100, 100)
-
-Height and width and color are up to you.
-
-********************************************/
+*/
                    
 var theCanvas3 = document.getElementById('Canvas3');
 				if (theCanvas3 && theCanvas3.getContext) {
@@ -126,24 +111,16 @@ PART 4- Bezier Curve
 	           var ctx4 = theCanvas4.getContext("2d");
 	           if (ctx4) {
 				ctx4.strokeStyle = "blue";
-				ctx4.lineWidth = 5;
-				
-				//Stroke a simple bezier curve
-				ctx4.beginPath();
-				ctx4.moveTo(50,200);
-				
-				//bezierCurveTo(cx1, cy1, cx2, cy2, x, y )
-				ctx4.bezierCurveTo(50,100, 200, 300, 200, 150);
-				
-				ctx4.stroke();	
+				ctx4.lineWidth = 5;	
                    
                    //quadratic curve
 				ctx4.beginPath();
-				ctx4.moveTo(400,200);
+				ctx4.moveTo(100,100);
 				
 				//quadraticCurveTo(cx, cy, x, y)
 				
-				ctx4.quadraticCurveTo(500,100, 600, 150);
+				ctx4.quadraticCurveTo(300,20, 450, 130);
+                ctx4.quadraticCurveTo(50,20, 400, 150);
 				ctx4.stroke();
 				
 				
@@ -160,21 +137,15 @@ PART 4- Bezier Curve
 	var ctx5 = theCanvas5.getContext("2d");
 	if (ctx5) {
 			
-			var theString = "Drawing text on a canvas";
+			var theString = "Full Sail University";
 			
 			//Simple text using defaults
-			ctx5.fillText(theString, 20,20);			
-			
-			//Style the font
-			ctx5.font = "25pt Georgia";
-			ctx5.fillStyle = "blue";
-			ctx5.fillText(theString, 20, 60);			
+			ctx5.fillText(theString, 20,20);					
 						
 			//Stroke and Fill Text
 			ctx5.font="32pt Verdana";
-			ctx5.fillStyle = "yellow";
-			//ctx.textBaseline= "middle";
-			ctx5.strokeStyle = "rgba(0, 255, 0, .5)";
+			ctx5.fillStyle = "white";
+			ctx5.strokeStyle = "rgba(255, 106, 0, 1)";
 			ctx5.fillText(theString, 20, 160);
 			ctx5.strokeText(theString, 20, 160);
 			
