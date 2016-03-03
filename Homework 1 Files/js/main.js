@@ -113,14 +113,20 @@ PART 4- Bezier Curve
 				ctx4.strokeStyle = "blue";
 				ctx4.lineWidth = 5;	
                    
-                   //quadratic curve
+                //quadratic curve
 				ctx4.beginPath();
 				ctx4.moveTo(100,100);
+                   
+                ctx4.beginPath();
+				//arc(x,y, r, sA, eA, Clockwise or counter);
+				ctx4.arc(200,190, 150, 1 * Math.PI , 2*Math.PI);
+				ctx4.stroke();   
 				
 				//quadraticCurveTo(cx, cy, x, y)
 				
-				ctx4.quadraticCurveTo(300,20, 450, 130);
-                ctx4.quadraticCurveTo(50,20, 400, 150);
+				ctx4.quadraticCurveTo(300,100, 250, 200);
+                ctx4.quadraticCurveTo(190,90, 150, 200);
+                ctx4.quadraticCurveTo(100,90, 50, 190);
 				ctx4.stroke();
 				
 				
@@ -139,7 +145,7 @@ PART 4- Bezier Curve
 			
 			var theString = "Full Sail University";
 			
-			//Simple text using defaults
+			//Simple text
 			ctx5.fillText(theString, 20,20);					
 						
 			//Stroke and Fill Text
@@ -154,35 +160,212 @@ PART 4- Bezier Curve
 		}
 	}
 
-/*******************************************
+/*
 PART 6- Pixel Manipulation
-
-Pixel manipulation.
-Draw the image logo.png into the canvas in the following 3 ways.
-1. The image exactly as it is.
-2. Shrink the image by 50%
-3. Slice a section of the logo out and draw that onto the canvas.
-
-Reminder to use the drawImage method for all 3 of the ways.
-
-********************************************/
+*/
 
 //Draw images here
+    var theCanvas6 = document.getElementById('Canvas6');
+	if (theCanvas6 && theCanvas6.getContext) {
+	var ctx6 = theCanvas6.getContext("2d");
+	if (ctx6) {
+
+			//Create a variable to hold our image
+			var  srcImg = document.getElementById("img1");
+			
+			//Draw an image directly onto the canvas
+			//ctx6.drawImage(srcImg, 0,0);
+
+			//Draw a scaled down image
+			//drawImage(srcImg, dx, dy, dw, dh)
+			ctx6.drawImage(srcImg, 50, 50, 350, 250);
+			
+			//Draw a slice image
+			//drawImage    (srcImg, sx, sy, sw, sh, dx, dy, dw, dh)
+            //ctx6.drawImage(srcImg, 300, 250,800,290,100, 50,250, 200 );
+				
+     						
+		}
+	}
 
 
 
-/*******************************************
+/*
 PART 7- Putting it all together
-
-Putting it all together. 
-
-Using a combination of all the methods. 
-Create a complex scene.
-You must use at least 3 different methods.
-
-********************************************/
+*/
 
 // Draw scene here
+ var theCanvas7 = document.getElementById("Canvas7");
+				//theCanvas.width = 150;
+				//theCanvas.height = 150;
 
+				if(theCanvas7 && theCanvas7.getContext) {
+					//Get context
+					var ctx7 = theCanvas7.getContext("2d");
+
+					if(ctx7){
+                        
+                        ctx7.strokeStyle= "green";
+						ctx7.fillStyle = "green";
+						ctx7.lineWidth = 5;
+                        
+                        //The Circles for the flowers
+						var degrees = 360;
+						var radians = (degrees/180)*Math.PI;
+                        
+                        ctx7.beginPath();
+                        //arc(x,y,r,sA,eA,Clockwise or counter)
+						ctx7.arc(180, 17, 20, 0, radians);
+						ctx7.fill();
+						ctx7.stroke();
+                        
+                        ctx7.beginPath();
+                        //arc(x,y,r,sA,eA,Clockwise or counter)
+						ctx7.arc(135, 37, 20, 0, radians);
+						ctx7.fill();
+						ctx7.stroke();
+                        
+                        ctx7.beginPath();
+                        //arc(x,y,r,sA,eA,Clockwise or counter)
+						ctx7.arc(128, 85, 20, 0, radians);
+						ctx7.fill();
+						ctx7.stroke();
+						
+						ctx7.beginPath();
+                        //arc(x,y,r,sA,eA,Clockwise or counter)
+						ctx7.arc(150, 130, 20, 0, radians);
+						ctx7.fill();
+						ctx7.stroke();
+                        
+                        ctx7.beginPath();
+                        //arc(x,y,r,sA,eA,Clockwise or counter)
+						ctx7.arc(200, 140, 20, 0, radians);
+						ctx7.fill();
+						ctx7.stroke();
+                        
+                        ctx7.beginPath();
+                        //arc(x,y,r,sA,eA,Clockwise or counter)
+						ctx7.arc(245, 120, 20, 0, radians);
+						ctx7.fill();
+						ctx7.stroke();
+                        
+                        ctx7.beginPath();
+                        //arc(x,y,r,sA,eA,Clockwise or counter)
+						ctx7.arc(250, 73, 20, 0, radians);
+						ctx7.fill();
+						ctx7.stroke();
+                        
+                        ctx7.beginPath();
+                        //arc(x,y,r,sA,eA,Clockwise or counter)
+						ctx7.arc(230, 30, 20, 0, radians);
+						ctx7.fill();
+						ctx7.stroke();
+                        
+                        //The center circle
+                        ctx7.beginPath();
+                        //arc(x,y,r,sA,eA,Clockwise or counter)
+						ctx7.arc(190, 75, 50, 0, radians);
+						ctx7.fill();
+						ctx7.stroke();
+                        
+                        //line
+                        ctx7.strokeStyle = "green";
+						ctx7.lineWidth = "5";
+                        
+                        ctx7.beginPath();
+                        ctx7.quadraticCurveTo(200,90, 200, 300);
+				        ctx7.stroke();
+                        
+                        //leaf
+                        ctx7.lineJoin = "round";
+
+						ctx7.beginPath();
+						ctx7.moveTo(200,200);
+						ctx7.lineTo(300,100);
+						ctx7.lineTo(110,500);
+						ctx7.stroke();
+                        
+                        //grass
+                        ctx7.strokeStyle = "yellow";
+						ctx7.fillStyle = "green";
+						ctx7.lineWidth = "5";
+                        
+                        ctx7.strokeRect(0, 270,10, 50);
+						ctx7.fillRect(0, 270,10,50);
+                        
+                        ctx7.strokeRect(20, 270,10, 50);
+						ctx7.fillRect(20, 270,10,50);
+                        
+                        ctx7.strokeRect(40, 270,10, 50);
+						ctx7.fillRect(40, 270,10,50);
+                        
+                        ctx7.strokeRect(60, 270,10, 50);
+						ctx7.fillRect(60, 270,10,50);
+                        
+                        ctx7.strokeRect(80, 270,10, 50);
+						ctx7.fillRect(80, 270,10,50);
+                        
+                        ctx7.strokeRect(100, 270,10, 50);
+						ctx7.fillRect(100, 270,10,50);
+                        
+                        ctx7.strokeRect(120, 270,10, 50);
+						ctx7.fillRect(120, 270,10,50);
+                        
+                        ctx7.strokeRect(140, 270,10, 50);
+						ctx7.fillRect(140, 270,10,50);
+                        
+                        ctx7.strokeRect(160, 270,10, 50);
+						ctx7.fillRect(160, 270,10,50);
+                        
+                        ctx7.strokeRect(180, 270,10, 50);
+						ctx7.fillRect(180, 270,10,50);
+                        
+                        ctx7.strokeRect(200, 270,10, 50);
+						ctx7.fillRect(200, 270,10,50);
+                        
+                        ctx7.strokeRect(220, 270,10, 50);
+						ctx7.fillRect(220, 270,10,50);
+                        
+                        ctx7.strokeRect(240, 270,10, 50);
+						ctx7.fillRect(240, 270,10,50);
+                        
+                        ctx7.strokeRect(260, 270,10, 50);
+						ctx7.fillRect(260, 270,10,50);
+                        
+                        ctx7.strokeRect(280, 270,10, 50);
+						ctx7.fillRect(280, 270,10,50);
+                        
+                        ctx7.strokeRect(300, 270,10, 50);
+						ctx7.fillRect(300, 270,10,50);
+                        
+                        ctx7.strokeRect(320, 270,10, 50);
+						ctx7.fillRect(320, 270,10,50);
+                        
+                        ctx7.strokeRect(340, 270,10, 50);
+						ctx7.fillRect(340, 270,10,50);
+                        
+                        ctx7.strokeRect(360, 270,10, 50);
+						ctx7.fillRect(360, 270,10,50);
+                        
+                        ctx7.strokeRect(380, 270,10, 50);
+						ctx7.fillRect(380, 270,10,50);
+                        
+                        ctx7.strokeRect(400, 270,10, 50);
+						ctx7.fillRect(400, 270,10,50);
+                        
+                        ctx7.strokeRect(420, 270,10, 50);
+						ctx7.fillRect(420, 270,10,50);
+                        
+                        ctx7.strokeRect(440, 270,10, 50);
+						ctx7.fillRect(440, 270,10,50);
+                        
+                        ctx7.strokeRect(460, 270,10, 50);
+						ctx7.fillRect(460, 270,10,50);
+                        
+                        ctx7.strokeRect(480, 270,10, 50);
+						ctx7.fillRect(480, 270,10,50);
+                    }
+                    
+                }
 
 }
