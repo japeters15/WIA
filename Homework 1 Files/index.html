@@ -2,75 +2,21 @@
 <html>
 <head>
     <title>HTML5 Drawing</title>
+    
     <script type="text/javascript" src="js/main.js"> </script>
-    <script type="text/javascript" src="includes/modernizr.js"> </script>
     
-    <style>
-        #Canvas1{
-            border: dotted 3px black;
-            background-color: lightgrey;
-        }
-        #Canvas2{
-            border: dotted 3px black;
-            background-color: lightgrey;
-        }
+        <style>
+            #Canvas1, #Canvas2, #Canvas3,
+            #Canvas4,
+            #Canvas5,
+            #Canvas6,
+            #Canvas7{
+                border: dotted 3px black;
+                background-color: lightgrey;
+            }
+
+        </style>
     
-    
-    
-    
-    </style>
-    
-    <script>
-    window.onload = function(){
-
-				var theCanvas = document.getElementById("Canvas1");
-				if (theCanvas && theCanvas.getContext) {
-				var ctx = theCanvas.getContext("2d");
-				//theCanvas.width = 150;
-				//theCanvas.height = 150;
-
-					if(ctx){
-
-						ctx.strokeStyle = "black";
-						ctx.fillStyle = "blue";
-						ctx.lineWidth = "10";
-
-						//Draw rectangle
-                        //strokeRect(posX, posY, Width, Height)
-						ctx.strokeRect(0, 0,50, 100);
-						ctx.fillRect(0, 0,50,100);
-
-						//Clearing a rectangle
-						//ctx.clearRect(15, 75, 450, 50);
-					}
-				}
-          }
-        
-        var theCanvas2 = document.getElementById("Canvas2");
-				//theCanvas.width = 150;
-				//theCanvas.height = 150;
-
-				if(theCanvas2){
-					//Get context
-					var ctx2 = theCanvas2.getContext("2d");
-
-					if(ctx2){
-
-						ctx2.strokeStyle = "black";
-						ctx2.fillStyle = "blue";
-						ctx2.lineWidth = "10";
-
-						//Draw rectangle
-                        //strokeRect(posX, posY, Width, Height)
-						ctx2.strokeRect(50, 50,50, 100);
-						ctx2.fillRect(50, 50,50,100);
-
-						//Clearing a rectangle
-						//ctx.clearRect(15, 75, 450, 50);
-			 }
-         }
-    }
-    </script>
 </head>
 <body>
     <div id="container">
@@ -86,23 +32,23 @@
     <canvas id="Canvas2" width="500" height="300">
         Your browser does not support canvas.
     </canvas>
-
+        <p>Canvas 3</p>
     <canvas id="Canvas3" width="500" height="300">
         Your browser does not support canvas.
     </canvas>
-
+        <p>Canvas 4</p>
     <canvas id="Canvas4" width="500" height="300">
         Your browser does not support canvas.
     </canvas>
-
+        <p>Canvas 5</p>
     <canvas id="Canvas5" width="500" height="300">
         Your browser does not support canvas.
     </canvas>
-
+        <p>Canvas 6</p>
     <canvas id="Canvas6" width="500" height="300">
         Your browser does not support canvas.
     </canvas>
-
+        <p>Canvas 7</p>
     <canvas id="Canvas7" width="500" height="300">
         Your browser does not support canvas.
     </canvas>
