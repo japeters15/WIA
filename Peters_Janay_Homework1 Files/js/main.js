@@ -3,13 +3,32 @@
      Date:03/01/2016
      Class & Section:  WIA333-O
      Comments: "HTML5 Canvas Drawing"
- */
+ */   
+
+/*
+Modernizr
+*/
+
+window.onload = function(){
+    
+    if(Modernizr.canvas){
+    //Canvas is supported
+    
+    var theCanvas = document.getElementById("Canvas1");
+    var ctx = theCanvas.getContext("2d");
+    
+    ctx.font = "25pt Georgia";
+    ctx.fillText("Canvas is supported!", 90, 60);
+    
+}else{
+    
+     //canvas is not supported
+    //pollyfill would go here
+} 
 
 /*
 PART 1- Rectangle
 */
-
-window.onload = function(){
 
 				var theCanvas = document.getElementById("Canvas1");
 				if (theCanvas && theCanvas.getContext) {
@@ -32,8 +51,7 @@ window.onload = function(){
 						//ctx.clearRect(15, 75, 450, 50);
 					}
 				}
-			
-          
+			          
 
 /*
 PART 2- Circle
