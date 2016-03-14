@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>PopMotion Presentation </title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/styles/sunburst.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				
+                <!--<section> go here-->
+                <section data-background="images/lines.png">
+        		<h1>PopMotion Presentation </h1>
+                    <p style="color: pink">Create delightful user interfaces with Popmotion</p>
+                    <p>By: Janay Peters</p>
+                </section>
+                	
+                <section data-background="#ce8726">
+        		<h2>What is PopMotion? </h2>
+                    <ul>
+                        <li>
+                        A plugin that allows you to make animations that will allow the user to interact with animations!
+                        </li>
+                        
+                        <li>
+                        It has support for CSS, DOM (Document Object Model) attributes, SVG and SVG paths, and can be used with any API that accepts numerical values.
+                        </li>
+                    </ul>
+                    
+                    
+                    <a href="https://popmotion.io" target="_blank"> Popmotion</a>
+                </section>
+                
+                <section>
+                    <section data-background="#0a2183">
+                        <h2>Code View (HTML)</h2>
+                            <pre><code>
+&lt;!DOCTYPE&nbsp;html&gt;
+&lt;html&nbsp;&gt;
+&nbsp;&nbsp;&lt;head&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta&nbsp;charset=&quot;UTF-8&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Tutorial:&nbsp;Complex&nbsp;animation&lt;/title&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;link&nbsp;rel=&quot;stylesheet&quot;&nbsp;href=&quot;css/style.css&quot;&gt;
+
+&nbsp;&nbsp;&lt;/head&gt;
+
+&nbsp;&nbsp;&lt;body&gt;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;test-area&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;id=&quot;ball&quot;&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;script&nbsp;src=&apos;https://popmotion.io/assets/js/popmotion.global.min.3.5.0.js&apos;&gt;&lt;/script&gt;
+&lt;script&nbsp;src=&apos;http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js&apos;&gt;&lt;/script&gt;
+&lt;script&nbsp;src=&quot;js/script.js&quot;&gt;&lt;/script&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;/body&gt;
+&lt;/html&gt;
+                      
+                        
+                            </code>
+                            </pre>
+                        <a href="index.html" target="_blank"> Animation</a>
+                    </section>
+                    
+                    <section data-background="#6091a0">       
+                        <h2>Code View (CSS)</h2>
+                            <pre><code>
+.test-area&nbsp;{
+&nbsp;&nbsp;background:&nbsp;#2a2a2a;
+&nbsp;&nbsp;position:&nbsp;absolute;
+&nbsp;&nbsp;top:&nbsp;0;
+&nbsp;&nbsp;right:&nbsp;0;
+&nbsp;&nbsp;bottom:&nbsp;0;
+&nbsp;&nbsp;left:&nbsp;0;
+}
+
+#ball&nbsp;{
+&nbsp;&nbsp;background:&nbsp;#ff2420;
+&nbsp;&nbsp;border-radius:&nbsp;50%;
+&nbsp;&nbsp;position:&nbsp;absolute;
+&nbsp;&nbsp;width:&nbsp;50px;
+&nbsp;&nbsp;height:&nbsp;50px;
+&nbsp;&nbsp;margin:&nbsp;10px;
+&nbsp;&nbsp;transform-origin:&nbsp;50%;
+}
+
+                      
+                        
+                            </code>
+                            </pre>
+                        <a href="index.html" target="_blank"> Animation</a>
+                    </section>
+                    
+                    
+                    <section data-background="#810d3a">
+                        <h2>Code View (JavaScript)</h2>
+                            <pre><code>
+&apos;use&nbsp;strict&apos;;
+
+var&nbsp;ballActor&nbsp;=&nbsp;new&nbsp;ui.Actor({
+&nbsp;&nbsp;&nbsp;&nbsp;element:&nbsp;document.getElementById(&apos;ball&apos;),
+&nbsp;&nbsp;&nbsp;&nbsp;values:&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;backgroundColor:&nbsp;&apos;#ff2420&apos;,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;borderRadius:&nbsp;&apos;50%&apos;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+});
+
+var&nbsp;morphAnimation&nbsp;=&nbsp;new&nbsp;ui.Tween({
+&nbsp;&nbsp;&nbsp;&nbsp;values:&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;backgroundColor:&nbsp;&apos;#2983ff&apos;,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;borderRadius:&nbsp;&apos;0%&apos;,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x:&nbsp;300
+&nbsp;&nbsp;&nbsp;&nbsp;},
+&nbsp;&nbsp;&nbsp;&nbsp;duration:&nbsp;1000,
+&nbsp;&nbsp;&nbsp;&nbsp;yoyo:&nbsp;true
+});
+
+ballActor.start(morphAnimation);
+                      
+                        
+                            </code>
+                            </pre>
+                        <a href="index.html" target="_blank"> Animation</a>
+                    </section>
+                </section>
+                	
+                <section>
+                    <h1>References</h1>
+                    
+                    <ul>
+                        <li>
+                        <a href="https://popmotion.io" target="_blank"> Popmotion</a>
+                        </li>
+                        
+                        <li>
+                        <a href="https://pixabay.com" target="_blank"> Image</a>
+                        </li>
+                    
+                        <li>
+                        <a href="http://www.html-entities.org" target="_blank"> Decoder</a>
+                        </li>
+                    
+                    </ul>
+                
+                
+                </section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme || "default",// available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'zoom', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
