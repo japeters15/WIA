@@ -84,13 +84,13 @@ div#theDiv {
 }
 
 #canvas5, canvas{
-    width:90%;
+    width:100%;
     vertical-align: middle;
     text-align:center;
 }
 
 video{
-    width: 100%;
+    width: 90%;
     vertical-align: middle;
 }
 

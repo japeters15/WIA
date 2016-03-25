@@ -51,7 +51,7 @@ var theCanvas5 = document.getElementById('Canvas5');
     var ctx = theCanvas.getContext("2d");
     
     ctx.font = "25pt Georgia";
-    ctx.fillText("Canvas is supported!", 800, 60);
+    ctx.fillText("Canvas is supported!", 700, 60);
     
 }else{
     
